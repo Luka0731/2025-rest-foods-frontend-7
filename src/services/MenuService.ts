@@ -28,6 +28,10 @@ export const MenuService = {
     return data.data;
   },
 
+  getCategories: async () => {
+    const res = await api.get("/categories");
+    return res.data;
+  },
   updateMenuItem: async (
     id: number,
     updatedData: Partial<MenuItem>
