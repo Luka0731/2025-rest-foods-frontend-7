@@ -9,9 +9,9 @@ import ReservationPage from './pages/ReservationPage'
 import DashboardPage from './pages/DashboardPage'
 import { ContactPage } from '@mui/icons-material'
 import NotFoundPage from './pages/NotFoundPage'
+import PrivateRoute from './components/PrivateRoute'
 
 function App() {
-
   return (
     <>
       <BrowserRouter>
@@ -22,7 +22,7 @@ function App() {
             <Route path="/menu" element={<MenuPage />} />
             <Route path="/menu/:id" element={<MenuItemPage />}/>
             <Route path="/reservation" element={<ReservationPage />}/>
-            <Route path="/dashboard" element={<DashboardPage />}/>
+            <Route path="/dashboard" element={<PrivateRoute><DashboardPage /></PrivateRoute>}/>
             <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
@@ -31,4 +31,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
