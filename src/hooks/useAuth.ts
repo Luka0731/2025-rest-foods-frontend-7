@@ -1,8 +1,15 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export function useAuth() {
-  // Unvollendet: Nur für test zwecke ist die variabel "isAuthenticated" auf wahr gestellt
-  const [isAuthenticated] = useState<boolean>(true); 
+  const [isAuthenticated, setIsAuthenticated] = useState(() =>
+    Boolean(localStorage.getItem("accessToken"))
+  );
 
-  return { isAuthenticated };
+  const logout = () => {
+    localStorage.removeItem("accessToken");
+    setIsAuthenticated(false);
+    window.location.href = "/";
+  };
+
+  return { isAuthenticated, logout };
 }
