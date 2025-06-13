@@ -3,6 +3,7 @@ import Image from "../atoms/Image";
 import { Container } from "@mui/material";
 import { MenuService, type MenuItem } from "../../services/MenuService";
 import { useNavigate } from "react-router-dom";
+import Text from "../atoms/Text";
 
 const ChefChoiceCard: React.FC = () => {
   const [chefChoice, setChefChoice] = useState<MenuItem | null>(null);
@@ -40,6 +41,7 @@ const ChefChoiceCard: React.FC = () => {
         onClick={() => navigate(`/menu/${chefChoice.id}`)}
       />
       <h3 className="menuItem-name">{chefChoice.name}</h3>
+      <Text className="chefChoice-desc">{chefChoice.description}</Text>
     </Container>
   );
 };

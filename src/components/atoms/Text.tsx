@@ -2,7 +2,7 @@ import React from "react";
 
 interface TextProps {
   className?: string;
-  children: React.ReactNode;
+  children: string;
 }
 
 const Text: React.FC<TextProps> = ({ className, children }) => (
