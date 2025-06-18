@@ -2,7 +2,7 @@ import { api } from "./Api";
 
 export interface Table {
   id: number;
-  available: string;
+  available: boolean;
   nr: number;
   seats: number;
 }

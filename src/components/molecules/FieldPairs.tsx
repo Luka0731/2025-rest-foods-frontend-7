@@ -1,6 +1,4 @@
 import React from "react";
-import Label from "../atoms/Label";
-import Text from "../atoms/Text";
 
 interface FieldPairProps {
   label: string;
@@ -11,8 +9,8 @@ interface FieldPairProps {
 
 const FieldPair: React.FC<FieldPairProps> = ({ label, value }) => (
   <div className="line">
-    <Label className="label">{label}</Label>
-    <Text className="value">{value}</Text>
+    <label className="label">{label}</label>
+    <p className="value">{value}</p>
   </div>
 );
 

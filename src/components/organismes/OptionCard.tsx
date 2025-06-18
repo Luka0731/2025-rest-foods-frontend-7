@@ -17,7 +17,7 @@ const OptionCard: React.FC = () => {
         className="goTo_menu-container"
         onClick={() => navigate("/menu")}
       >
-        <h3 className="container-txt">Book a Table</h3>
+        <h3 className="container-txt">See our menu</h3>
       </Container>
     </div>
   );
