@@ -1,0 +1,32 @@
+:root {
+    --color-1: #A4B465;
+    --color-2: #626F47;
+    --color-3: #F0BB78;
+    --color-4: #F5ECD5;
+    --color-5: #21221c;
+}
+
+.category-card {
+    position: relative;
+    width: flex;
+    margin: 6px;
+    height: 110px;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--color-1);
+    justify-content: center;  
+    align-items: center;      
+    gap: 20px;                
+}
+
+.title {
+    color: var(--color-4);
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+}

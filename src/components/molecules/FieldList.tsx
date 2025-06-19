@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Label from "../atoms/Label";
 
 interface Props {
   urls: string[];
@@ -33,7 +32,7 @@ const NameList: React.FC<Props> = ({ urls, label }) => {
 
   return (
     <div className="line">
-      <Label className="label">{label}:</Label>
+      <p className="label">{label}:</p>
       <p>{value.join(", ")}</p>
     </div>
   );
