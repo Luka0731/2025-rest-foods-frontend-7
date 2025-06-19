@@ -5,7 +5,7 @@ import { Button } from "@mui/material";
 
 const TopNav: React.FC = () => {
   const navigate = useNavigate();
-  const { isAuthenticated, logout } = useAuth();
+  const { isAuthenticated } = useAuth();
 
   return (
     <nav className="top-nav">
@@ -20,7 +20,6 @@ const TopNav: React.FC = () => {
             <li onClick={() => navigate("/dashboard")}>Dashboard</li>
             <li onClick={() => navigate("/signup")}>Signup</li>
             <li onClick={() => navigate("/table")}>Dashboard</li>
-            <li onClick={logout}>Logout</li>
           </>
         )}
       </ul>

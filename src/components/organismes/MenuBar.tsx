@@ -1,8 +1,9 @@
 const MenuBar = () => {
   return (
     <>
-        MenuBar
-    </>);
+      MenuBar
+    </>
+  );
 };
 
 export default MenuBar;
