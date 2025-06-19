@@ -44,4 +44,9 @@ export const MenuService = {
     const data = await api.delete(`/menu/${id}`);
     return data.data;
   },
+
+  getChefChoice: async (): Promise<MenuItem[]> => {
+    const data = await api.get("/menu?chefsChoice=true");
+    return data.data;
+  },
 };
