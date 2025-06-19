@@ -4,42 +4,33 @@ import { MenuService, type MenuItem } from "../../services/MenuService";
 import { useNavigate } from "react-router-dom";
 
 const ChefChoiceCard: React.FC = () => {
-  const [chefChoice, setChefChoice] = useState<MenuItem | null>(null);
+  const [chefChoice, setChefChoice] = useState<MenuItem[]>([]);
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchChefChoice = async () => {
-      try {
-        const result = await MenuService.getMenu();
-        const chefItem = result.find((item) => item.chefs_choice === true);
-        if (chefItem) {
-          setChefChoice(chefItem);
-        } else {
-          setError("No chef choice found.");
-        }
-      } catch (err: unknown) {
-        setError(
-          err instanceof Error ? err.message : "Failed to load Chef Choice"
-        );
-      }
-    };
-    fetchChefChoice();
+    MenuService.getChefChoice()
+      .then((data) => setChefChoice(data))
+      .catch((err) => setError(err.message));
   }, []);
 
   if (error) return <div>Error: {error}</div>;
-  if (!chefChoice) return <div>Loading...</div>;
+  if (chefChoice.length === 0) return <div>Loading...</div>;
 
   return (
     <Container className="chefsChoice">
-      <img
-        src={chefChoice.image_url}
-        alt={chefChoice.name}
-        className="menuItem-img"
-        onClick={() => navigate(`/menu/${chefChoice.id}`)}
-      />
-      <h3 className="menuItem-name">{chefChoice.name}</h3>
-      <p className="chefChoice-desc">{chefChoice.description}</p>
+      {chefChoice.map((item) => (
+        <div key={item.id} className="chefChoice-card">
+          <img
+            src={item.image_url}
+            alt={item.name}
+            className="menuItem-img"
+            onClick={() => navigate(`/menu/${item.id}`)}
+          />
+          <h3 className="menuItem-name">{item.name}</h3>
+          <p className="chefChoice-desc">{item.description}</p>
+        </div>
+      ))}
     </Container>
   );
 };
