@@ -329,4 +329,7 @@ export const MenuService = {
     await fakeApiDelay(300);
     return [...new Set(mockMenuItems.map(item => item.category))];
   }
+
+
+
 };

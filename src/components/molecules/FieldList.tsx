@@ -32,7 +32,7 @@ const NameList: React.FC<Props> = ({ urls, label }) => {
 
   return (
     <div className="line">
-      <p className="label">{label}:</p>
+      <label className="label">{label}:</label>
       <p>{value.join(", ")}</p>
     </div>
   );

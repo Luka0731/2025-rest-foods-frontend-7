@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export function useAuth() {
 
   // fake auth hook
-  const [isAuthenticated] = useState(true); 
+  const [isAuthenticated, setIsAuthenticated] = useState(true); 
   
   /*
   const [isAuthenticated, setIsAuthenticated] = useState(() =>
@@ -11,5 +11,11 @@ export function useAuth() {
   );
   */
 
-  return { isAuthenticated };
+  const logout = () => {
+    localStorage.removeItem("accessToken");
+    setIsAuthenticated(false);
+    window.location.href = "/";
+  };
+
+  return { isAuthenticated, logout };
 }
