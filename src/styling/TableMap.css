@@ -1,0 +1,22 @@
+.table-container {
+  padding: 16px;
+}
+
+.date-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.date-text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.table-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+}

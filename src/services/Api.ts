@@ -3,8 +3,6 @@ export const api = axios.create({
   baseURL: "http://localhost:8080/api",
 });
 
-/* comment*/
-
 api.interceptors.request.use((config) => {
   const accessToken = localStorage.getItem("accessToken");
   if (accessToken) {

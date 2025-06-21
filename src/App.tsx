@@ -12,7 +12,6 @@ import PrivateRoute from "./components/PrivateRoute";
 import MenuItemEditPage from "./components/pages/MenuItemEditPage";
 import MenuItemCreatePage from "./components/pages/MenuItemCreatePage";
 import TablesPage from "./components/pages/TablesPage";
-import TablesCreatePage from "./components/pages/TablesCreatePage";
 
 function App() {
   return (
@@ -58,14 +57,7 @@ function App() {
               </PrivateRoute>
             }
           />
-          <Route
-            path="/tables/new"
-            element={
-              <PrivateRoute>
-                <TablesCreatePage />
-              </PrivateRoute>
-            }
-          />
+
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>

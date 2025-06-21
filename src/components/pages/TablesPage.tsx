@@ -1,5 +1,10 @@
+import TableMap from "../organismes/TableCard";
 const TablesPage = () => {
-  return <>Tables Page</>;
+  return (
+    <>
+      <TableMap></TableMap>
+    </>
+  );
 };
 
 export default TablesPage;

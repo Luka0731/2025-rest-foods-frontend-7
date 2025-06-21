@@ -1,75 +1,38 @@
 import React, { useEffect, useState } from "react";
 import { TableService, type Table } from "../../services/TableService";
+import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
+import TableChoice from "../organismes/Table";
+import { LocalDate } from "@js-joda/core";
 
 const TableMap: React.FC = () => {
   const [tables, setTables] = useState<Table[]>([]);
-  const [selectedId, setSelectedId] = useState<number | null>(null);
   const [error, setError] = useState("");
+  const [date, setDate] = useState("");
 
   useEffect(() => {
-    const fetchTables = async () => {
-      try {
-        const result = await TableService.getTables();
-        setTables(result);
-      } catch (err: unknown) {
-        setError(err instanceof Error ? err.message : "Failed to load tables");
-      }
-    };
-    fetchTables();
+    const today = LocalDate.now().toString();
+    setDate(today);
+
+    TableService.getTables()
+      .then((data) => setTables(data))
+      .catch((err) => setError(err.message));
   }, []);
-
-  const handleSelect = (id: number) => {
-    setSelectedId(id === selectedId ? null : id);
-  };
-
-  const handleReserve = async () => {
-    if (selectedId === null) return;
-
-    try {
-      await TableService.updateTable(selectedId, { available: false });
-      setTables((prev) =>
-        prev.map((table) =>
-          table.id === selectedId ? { ...table, available: false } : table
-        )
-      );
-      alert(`Table ${selectedId} reserved!`);
-      setSelectedId(null);
-    } catch (err) {
-      console.error(err);
-      alert("Failed to reserve table.");
-    }
-  };
-
-  const isAvailable = (table: Table) => table.available === true;
 
   if (error) return <div>{error}</div>;
   if (!tables.length) return <div>Loading...</div>;
 
   return (
     <div className="table-container">
+      <div className="date-header">
+        <h2>{date}</h2>
+        <CalendarTodayIcon />
+        <span>{date}</span>
+      </div>
       <div className="table-grid">
         {tables.map((table) => (
-          <div
-            key={table.id}
-            className={`table-item ${
-              selectedId === table.id ? "selected" : ""
-            } ${!isAvailable(table) ? "disabled" : ""}`}
-            onClick={() => isAvailable(table) && handleSelect(table.id)}
-          >
-            {table.nr}
-            {selectedId === table.id && isAvailable(table) && (
-              <span className="checkmark">✔</span>
-            )}
-          </div>
+          <TableChoice key={table.id} id={table.id} seats={table.seats} />
         ))}
       </div>
-      <button
-        className="reserve-btn"
-        onClick={handleReserve}
-        disabled={selectedId === null}
-      >
-        Reserve a Table
-      </button>
     </div>
   );
 };

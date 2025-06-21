@@ -2,8 +2,7 @@ import { api } from "./Api";
 
 export interface Table {
   id: number;
-  available: boolean;
-  nr: number;
+
   seats: number;
 }
 
