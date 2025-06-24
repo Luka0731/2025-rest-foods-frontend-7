@@ -6,12 +6,13 @@ import LoginPage from "./components/pages/LoginPage";
 import SignupPage from "./components/pages/SignupPage";
 import ReservationPage from "./components/pages/ReservationPage";
 import DashboardPage from "./components/pages/DashboardPage";
-import { ContactPage } from "@mui/icons-material";
+import ContactPage from "./components/pages/ContactPage";
 import NotFoundPage from "./components/pages/NotFoundPage";
 import PrivateRoute from "./components/PrivateRoute";
 import MenuItemEditPage from "./components/pages/MenuItemEditPage";
 import MenuItemCreatePage from "./components/pages/MenuItemCreatePage";
 import TablesPage from "./components/pages/TablesPage";
+import ReservationForm from "./components/organismes/ReservationForm";
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/menu" element={<MenuPage />} />
           <Route path="/menu/:id" element={<MenuItemPage />} />
+          <Route path="/reservation" element={<ReservationPage />} />
+          <Route path="/reservation/:id" element={<ReservationForm />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route
             path="/menu/:id/edit"
             element={
@@ -48,7 +52,7 @@ function App() {
               </PrivateRoute>
             }
           />
-          <Route path="/contact" element={<ContactPage />} />
+
           <Route
             path="/tables"
             element={

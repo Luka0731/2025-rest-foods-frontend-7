@@ -3,6 +3,7 @@ import ChefChoiceCard from "../organismes/ChefChoiceCard";
 import AboutUsCard from "../organismes/AboutUsCard";
 import OptionCard from "../organismes/OptionCard";
 import TopNav from "../organismes/TopNav";
+import ContactCard from "../organismes/ContacCard";
 
 const Homepage = () => {
   return (
@@ -12,6 +13,7 @@ const Homepage = () => {
         value="Rest Foods"
         src="https://vietnamdecouverte.com/pic/blog/76609d8c-ea8a-4076-b45b-f67d732011c5.jpg"
       ></StartCard>
+      <ContactCard></ContactCard>
       <AboutUsCard></AboutUsCard>
       <ChefChoiceCard></ChefChoiceCard>
       <OptionCard></OptionCard>

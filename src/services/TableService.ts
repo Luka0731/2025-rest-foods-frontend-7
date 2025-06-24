@@ -2,7 +2,6 @@ import { api } from "./Api";
 
 export interface Table {
   id: number;
-
   seats: number;
 }
 

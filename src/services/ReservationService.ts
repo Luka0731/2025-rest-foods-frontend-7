@@ -7,7 +7,7 @@ export interface Reservation {
   start_time: string;
   end_time: string;
   table_id: number;
-  people_count: number;
+  people_count: string;
 }
 
 export const ReservationService = {
@@ -15,6 +15,15 @@ export const ReservationService = {
     newReservation: Omit<Reservation, "id">
   ): Promise<Reservation> => {
     const data = await api.post(`/reservations`, newReservation);
+    return data.data;
+  },
+
+  getReservationsByDateTime: async (
+    dateTime: string
+  ): Promise<Reservation[]> => {
+    const data = await api.get("/reservations", {
+      params: { dateTime },
+    });
     return data.data;
   },
 
