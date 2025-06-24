@@ -14,7 +14,7 @@ const MenuSection: React.FC<{category : string}> = ({ category }) => {
 
   return (
     <>
-      <CategoryCard title={category} icon="https://cdn-icons-png.flaticon.com/512/7780/7780470.png"/>
+      <CategoryCard category={category} />
       <div className="menu-container">
         {menuItems.map((item) => (
           <MenuItemCard key={item.id} {...item} onDelete={handleDelete} />

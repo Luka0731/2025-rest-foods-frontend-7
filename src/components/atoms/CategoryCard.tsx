@@ -1,18 +1,25 @@
 import React from 'react';
 import './CategoryCard.css';
 
-interface CategoryCardProps {
-  icon: string;
-  title: string;
-}
+const CategoryCard: React.FC<{category: string;}> = ({ category }) => {
+    const availableIcons = [
+        "appetizer", "bento", "beverage", "breakfast", "coffe", "cookies",
+        "curry", "dessert", "egg", "fish", "fruit", "liquor",
+        "main", "noodle soup", "side", "takeout", "washoku", "soup"
+    ];
+    const matchedIcon = availableIcons.find(icon =>
+        icon.toLowerCase() === category.toLowerCase()
+    );
+    const iconPath = matchedIcon
+        ? `/assets/icons/${matchedIcon}.png`
+        : "/assets/icons/default.png"; 
 
-const CategoryCard: React.FC<CategoryCardProps> = ({ icon, title}) => {
     return (
         <div className="category-card">
-            <img className="icon" src={icon} alt="icon" />
-            <h2 className="title">{title}</h2>
+            <img className="icon" src={iconPath} alt="icon" />
+            <h2 className="title">{category}</h2>
         </div>
-    )
+    );
 };
 
 export default CategoryCard;

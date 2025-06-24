@@ -1,10 +1,20 @@
+import { useCategories } from "../../hooks/useCategories";
 import MenuSection from "../molecules/MenuSection";
+import "./Menu.css";
 
 const Menu = () => {
+  const { categories, loading, error } = useCategories();
+
+  if (loading) return <div>Loading categories...</div>;
+  if (error) return <div>Error loading categories: {error.message}</div>;
+
   return (
     <>
-      <MenuSection category="Soup" />
-      <MenuSection category="Appetizer" />
+      {categories.map((category) => (
+        <div key={category.id} id={`category-${category.name}`}>
+          <MenuSection category={category.name} />
+        </div>
+      ))}
     </>
   );
 };
