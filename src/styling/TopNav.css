@@ -1,17 +1,17 @@
-/* Container */
 .top-nav {
+  width: 100%; /* instead of 100vw */
+  max-width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #d62828; /* Thai chili red */
-  color: white;
   padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
+  background-color: #d62828;
+  color: white;
+  position: relative;
   z-index: 1000;
+  box-sizing: border-box;
 }
 
-/* Restaurant Icon */
 .top-nav__icon {
   font-size: 2rem;
   cursor: pointer;

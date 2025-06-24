@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Container } from "@mui/material";
 import { MenuService, type MenuItem } from "../../services/MenuService";
 import { useNavigate } from "react-router-dom";
-
+import "../../styling/ChefChoice.css";
 const ChefChoiceCard: React.FC = () => {
   const [chefChoice, setChefChoice] = useState<MenuItem[]>([]);
   const [error, setError] = useState("");

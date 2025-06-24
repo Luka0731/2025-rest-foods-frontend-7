@@ -1,0 +1,38 @@
+.startCard-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.startCard-img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  filter: brightness(0.6);
+  display: block;
+}
+
+.start-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff4f4;
+  font-size: 5rem;
+  font-weight: bold;
+  font-family: "Prompt", "Segoe UI", sans-serif;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .start-title {
+    font-size: 2rem;
+  }
+
+  .startCard-img {
+    height: 300px;
+  }
+}

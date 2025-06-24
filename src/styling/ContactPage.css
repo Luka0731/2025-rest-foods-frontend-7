@@ -94,6 +94,7 @@
 .Form textarea:focus {
   border-color: #b4e090;
   outline: none;
+  color: #fff8e7;
 }
 
 .Form textarea {
