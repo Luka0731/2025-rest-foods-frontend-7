@@ -33,7 +33,9 @@ const ContactForm: React.FC = () => {
       <Formik initialValues={initialValues} onSubmit={onSubmit}>
         {({ isSubmitting }) => (
           <Form className="Form">
-            <label htmlFor="name">Name</label>
+            <h3 className="contact-us">CONTACT US DIRECTLY</h3>
+            <label htmlFor="name">NAME</label>
+            <ErrorMessage name="name" component="div" className="error" />
             <Field
               type="text"
               id="name"
@@ -42,9 +44,8 @@ const ContactForm: React.FC = () => {
               className="name"
               required
             />
-            <ErrorMessage name="name" component="div" className="error" />
-
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">EMAIL</label>
+            <ErrorMessage name="email" component="div" className="error" />
             <Field
               type="email"
               id="email"
@@ -53,9 +54,9 @@ const ContactForm: React.FC = () => {
               className="email"
               required
             />
-            <ErrorMessage name="email" component="div" className="error" />
 
-            <label htmlFor="message">Message</label>
+            <label htmlFor="message">MESSAGE</label>
+            <ErrorMessage name="message" component="div" className="error" />
             <Field
               as="textarea"
               id="message"
@@ -63,10 +64,8 @@ const ContactForm: React.FC = () => {
               className="message"
               required
             />
-            <ErrorMessage name="message" component="div" className="error" />
-
             <Button type="submit" className="Submit" disabled={isSubmitting}>
-              {isSubmitting ? "Submitting..." : "Submit"}
+              {isSubmitting ? "Submitting..." : "SUBMIT"}
             </Button>
           </Form>
         )}

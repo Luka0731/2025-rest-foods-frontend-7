@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  font-family: "Prompt", "Segoe UI", sans-serif;
+  background-color: #fff8e7; /* coconut cream tone */
+  color: #2c2c2c;
+}
+
+section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.top-nav {
+  background-color: #d62828; /* chili red */
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.start-card {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.start-card img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  filter: brightness(0.6);
+  border-bottom: 4px solid #f6aa1c; /* gold border */
+}
+
+.start-card h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+}
+
+.contact-info {
+  background-color: #faf3dd; /* jasmine rice */
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.card-section {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 768px) {
+  .start-card h1 {
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+  }
+
+  section {
+    padding: 2rem 1rem;
+  }
+}

@@ -13,7 +13,8 @@ import "../../styling/TableMap.css";
 const TableMap: React.FC = () => {
   const [tables, setTables] = useState<Table[]>([]);
   const [error, setError] = useState("");
-  const [selectedDateTime, setSelectedDateTime] = useState<string>("");
+  const [start_time, setStartTime] = useState<string>("");
+  const [end_time, setEndTime] = useState<string>("");
   const [reservedTableIds, setReservedTableIds] = useState<number[]>([]);
   const [selectedTableId, setSelectedTableId] = useState<number | null>(null);
 
@@ -24,8 +25,8 @@ const TableMap: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (selectedDateTime) {
-      ReservationService.getReservationsByDateTime(selectedDateTime)
+    if (start_time && end_time) {
+      ReservationService.getReservationsByDateTime(start_time, end_time)
         .then((reservations: Reservation[]) => {
           const ids = reservations.map((r) => r.table_id);
           setReservedTableIds(ids);
@@ -34,12 +35,17 @@ const TableMap: React.FC = () => {
     } else {
       setReservedTableIds([]);
     }
-  }, [selectedDateTime]);
+  }, [start_time, end_time]);
 
   const handleTableClick = (tableId: number) => {
     if (!reservedTableIds.includes(tableId)) {
       setSelectedTableId(tableId);
     }
+  };
+
+  const handleReservationChange = (start: string, end: string) => {
+    setStartTime(start);
+    setEndTime(end);
   };
 
   if (error) return <div>{error}</div>;
@@ -49,7 +55,7 @@ const TableMap: React.FC = () => {
     <div className="table-container">
       <div className="date-header">
         <CalendarTodayIcon />
-        <ReservationBar onReservationChange={setSelectedDateTime} />
+        <ReservationBar onReservationChange={handleReservationChange} />
       </div>
 
       <div className="table-grid">
@@ -64,12 +70,13 @@ const TableMap: React.FC = () => {
         ))}
       </div>
 
-      {selectedTableId && selectedDateTime && (
+      {selectedTableId && start_time && end_time && (
         <div className="reservation-form-container">
           <h3>Make a Reservation for Table {selectedTableId}</h3>
           <ReservationForm
             tableId={selectedTableId}
-            initialStartTime={selectedDateTime}
+            initialStartTime={start_time}
+            initialEndTime={end_time}
           />
         </div>
       )}
