@@ -1,0 +1,14 @@
+.menu-bar {
+  width: 220px;
+  background-color: #fad4c0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  border-right: 1px solid #e2b8a3;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+ 
