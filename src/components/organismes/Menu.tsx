@@ -1,6 +1,5 @@
 import { useCategories } from "../../hooks/useCategories";
 import MenuSection from "../molecules/MenuSection";
-import "./Menu.css";
 
 const Menu = () => {
   const { categories, loading, error } = useCategories();

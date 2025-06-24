@@ -9,11 +9,8 @@ const MenuPage = () => {
   return (
     <>
       <TopNav/>
-      
       <div className="layout">
-        <div className="menu-bar">
-          <MenuBar />
-        </div>
+        <MenuBar />
         <div className="menu">
           <h2>Menu</h2>
           <Menu />

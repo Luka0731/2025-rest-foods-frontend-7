@@ -1,21 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Container } from "@mui/material";
-import { MenuService, type MenuItem } from "../../services/MenuService";
+import { useMenu } from "../../hooks/useMenu";
 import { useNavigate } from "react-router-dom";
+import "./ChefChoiceCard.css";
 
 const ChefChoiceCard: React.FC = () => {
-  const [chefChoice, setChefChoice] = useState<MenuItem[]>([]);
-  const [error, setError] = useState("");
+  const { menuItems: chefChoice, loading, error } = useMenu({ chefsChoice: true });
   const navigate = useNavigate();
 
-  useEffect(() => {
-    MenuService.getChefChoice()
-      .then((data) => setChefChoice(data))
-      .catch((err) => setError(err.message));
-  }, []);
-
-  if (error) return <div>Error: {error}</div>;
-  if (chefChoice.length === 0) return <div>Loading...</div>;
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+  if (chefChoice.length === 0) return <div>No Chef's Choice available.</div>;
 
   return (
     <Container className="chefsChoice">
