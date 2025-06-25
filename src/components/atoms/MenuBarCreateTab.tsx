@@ -6,7 +6,7 @@ const MenuBarCreateTab: React.FC = () => {
 
   return (
     <div className="menu-bar-tab" onClick={() => navigate("/dashboard")}>
-      <img className="icon" src="" alt="icon" /> {/* ToDo */}
+      <img className="icon" src="\assets\icons\create.png" alt="icon" /> {/* ToDo */}
       <p className="title">Add new Item</p>
     </div>
   );

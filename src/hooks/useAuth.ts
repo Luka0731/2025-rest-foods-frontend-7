@@ -3,7 +3,7 @@ import { useState } from "react";
 export function useAuth() {
 
   // fake auth hook
-  const [isAuthenticated, setIsAuthenticated] = useState(true); 
+  const [isAuthenticated, setIsAuthenticated] = useState(false); 
   
   /*
   const [isAuthenticated, setIsAuthenticated] = useState(() =>
