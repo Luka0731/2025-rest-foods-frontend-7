@@ -5,9 +5,9 @@ const MenuBarCreateTab: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="menu-bar-tab" onClick={() => navigate("/dashboard")}>
-      <img className="icon" src="" alt="icon" /> {/* ToDo */}
-      <p className="title">Add new Item</p>
+    <div className="menu-bar-tab" onClick={() => navigate("/menu/new")}>
+      <img className="icon" src="\assets\icons\create.png" alt="icon" />
+      <p className="title">New Item</p>
     </div>
   );
 };
