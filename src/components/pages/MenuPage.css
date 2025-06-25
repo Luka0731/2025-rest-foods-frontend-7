@@ -8,7 +8,7 @@ body {
 .layout {
     display: flex;
     position: absolute;
-    top: 100px;
+    top: 70px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -26,6 +26,6 @@ body {
     .layout {
         flex-direction: column;
         height: auto;
-        top: 78px;
+        top: 75px;
     }
 }

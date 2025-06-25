@@ -21,11 +21,7 @@ const TopNav: React.FC = () => {
         <span className="top-nav__brand-text">REST-Foods</span>
       </div>
 
-      <div
-        className="top-nav__toggle"
-        onClick={toggleMenu}
-        aria-label="Toggle menu"
-      >
+      <div className="top-nav__toggle" onClick={toggleMenu} aria-label="Toggle menu">
         {menuOpen ? <CloseIcon /> : <MenuIcon />}
       </div>
 
@@ -33,11 +29,15 @@ const TopNav: React.FC = () => {
         <li onClick={() => navigate("/")}>Home</li>
         <li onClick={() => navigate("/menu")}>Menu</li>
         <li onClick={() => navigate("/reservation")}>Reservation</li>
+        {!isAuthenticated && (
+          <>
+            <li onClick={() => navigate("/login")}>Login</li>
+          </>
+        )}
         {isAuthenticated && (
           <>
+            <li onClick={() => navigate("/tables")}>Table</li>
             <li onClick={() => navigate("/dashboard")}>Dashboard</li>
-            <li onClick={() => navigate("/signup")}>Signup</li>
-            <li onClick={() => navigate("/table")}>Table</li>
             <li onClick={logout}>Logout</li>
           </>
         )}

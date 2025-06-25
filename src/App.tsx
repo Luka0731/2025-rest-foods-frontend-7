@@ -25,7 +25,7 @@ function App() {
           <Route path="/menu" element={<MenuPage />} />
           <Route path="/menu/:id" element={<MenuItemPage />} />
           <Route path="/reservation" element={<ReservationPage />} />
-          <Route path="/reservation/:id" element={<ReservationForm />} />
+          <Route path="/reservation/:id" element={<ReservationForm tableId={0} initialStartTime={""} initialEndTime={""} />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route
             path="/menu/:id/edit"
