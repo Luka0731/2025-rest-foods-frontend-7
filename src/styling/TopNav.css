@@ -120,15 +120,15 @@
     left: 0;
     right: 0;
     background: var(--color-4);
-    border-top: 1px solid var(--color-5);
     display: none;
     padding: 1rem 2rem;
-    box-shadow: 0 8px 12px var(--color-5);
     z-index: 99;
   }
 
   .top-nav__menu.open {
     display: flex;
+    margin-top: 0;
+    top: 70px;
   }
 
   .top-nav__menu li {
