@@ -20,3 +20,73 @@
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 16px;
 }
+
+.reservation-form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px 25px;
+  background-color: #fff9f2;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(246, 170, 28, 0.25);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.reservation-form div {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.reservation-form label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #3a3a3a;
+  font-size: 14px;
+}
+
+.reservation-form input[type="text"],
+.reservation-form select.dropdown {
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 2px solid #f6aa1c;
+  border-radius: 6px;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease;
+}
+
+.reservation-form input[type="text"]:focus,
+.reservation-form select.dropdown:focus {
+  border-color: #e06d09;
+  box-shadow: 0 0 5px rgba(224, 109, 9, 0.5);
+}
+
+.error {
+  margin-top: 10px;
+  color: #ff4d4f;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.reservation-form button[type="submit"] {
+  background-color: #f6aa1c;
+  color: #333;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 12px 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.reservation-form button[type="submit"]:hover:not(:disabled) {
+  background-color: #e06d09;
+  color: white;
+}
+
+.reservation-form button[type="submit"]:disabled {
+  background-color: #c7c7c7;
+  cursor: not-allowed;
+  color: #666;
+}

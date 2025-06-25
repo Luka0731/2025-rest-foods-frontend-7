@@ -19,8 +19,12 @@ const TableChoice: React.FC<Props> = ({ id, seats, isReserved, onClick }) => {
       case 2:
         return (
           <div className={`wrapper ${isReserved ? "reserved" : ""}`}>
-            <div className="bar horizontal top"></div>
-            <div className="bar horizontal bottom"></div>
+            <div className="top-bars">
+              <div className="bar horizontal top"></div>
+            </div>
+            <div className="bottom-bars">
+              <div className="bar horizontal bottom"></div>
+            </div>
             <div className="center-box-2">{id}</div>
           </div>
         );
@@ -28,14 +32,14 @@ const TableChoice: React.FC<Props> = ({ id, seats, isReserved, onClick }) => {
       case 4:
         return (
           <div className={`wrapper ${isReserved ? "reserved" : ""}`}>
-            <>
+            <div className="top-bars">
               <div className="bar horizontal top"></div>
               <div className="bar horizontal top"></div>
-            </>
-            <>
+            </div>
+            <div className="bottom-bars">
               <div className="bar horizontal bottom"></div>
               <div className="bar horizontal bottom"></div>
-            </>
+            </div>
             <div className="center-box-4">{id}</div>
           </div>
         );
@@ -43,16 +47,16 @@ const TableChoice: React.FC<Props> = ({ id, seats, isReserved, onClick }) => {
       case 6:
         return (
           <div className={`wrapper ${isReserved ? "reserved" : ""}`}>
-            <>
+            <div className="top-bars">
               <div className="bar horizontal top"></div>
               <div className="bar horizontal top"></div>
               <div className="bar horizontal top"></div>
-            </>
-            <>
-              <div className="bar horizontal bottom" />
-              <div className="bar horizontal bottom" />
-              <div className="bar horizontal bottom" />
-            </>
+            </div>
+            <div className="bottom-bars">
+              <div className="bar horizontal bottom"></div>
+              <div className="bar horizontal bottom"></div>
+              <div className="bar horizontal bottom"></div>
+            </div>
             <div className="center-box-6">{id}</div>
           </div>
         );
@@ -60,18 +64,18 @@ const TableChoice: React.FC<Props> = ({ id, seats, isReserved, onClick }) => {
       case 8:
         return (
           <div className={`wrapper ${isReserved ? "reserved" : ""}`}>
-            <>
+            <div className="top-bars">
               <div className="bar horizontal top"></div>
               <div className="bar horizontal top"></div>
               <div className="bar horizontal top"></div>
               <div className="bar horizontal top"></div>
-            </>
-            <>
-              <div className="bar horizontal bottom" />
-              <div className="bar horizontal bottom" />
-              <div className="bar horizontal bottom" />
-              <div className="bar horizontal bottom" />
-            </>
+            </div>
+            <div className="bottom-bars">
+              <div className="bar horizontal bottom"></div>
+              <div className="bar horizontal bottom"></div>
+              <div className="bar horizontal bottom"></div>
+              <div className="bar horizontal bottom"></div>
+            </div>
             <div className="center-box-8">{id}</div>
           </div>
         );

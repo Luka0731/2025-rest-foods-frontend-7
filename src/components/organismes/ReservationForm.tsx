@@ -56,6 +56,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
               type="text"
               validate={validateOnlyText}
             />
+            <br></br>
             <ErrorMessage name="guest_name" component="div" className="error" />
           </div>
 
@@ -67,6 +68,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
               type="text"
               validate={validatePhoneNumber}
             />
+            <br></br>
             <ErrorMessage
               name="phone_number"
               component="div"
@@ -91,6 +93,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({
                 </option>
               ))}
             </Field>
+            <br></br>
             <ErrorMessage
               name="people_count"
               component="div"
