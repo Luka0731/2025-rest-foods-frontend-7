@@ -1,10 +1,18 @@
+:root {
+  --color-1: #a4b465;
+  --color-2: #626f47;
+  --color-3: #f0bb78;
+  --color-4: #f5ecd5;
+  --color-5: #21221c;
+  --color-6: rgb(235, 223, 190);
+}
+
 .chefsChoice {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
   padding: 2rem;
-  background-color: #fffdf7;
 }
 
 .chefChoice-card {

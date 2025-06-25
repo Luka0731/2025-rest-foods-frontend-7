@@ -1,9 +1,7 @@
 import StartCard from "../organismes/StartCard";
-import TableChoice from "../organismes/Table";
 import TableMap from "../organismes/TableCard";
 import TopNav from "../organismes/TopNav";
 import "../../styling/TableChoice.css";
-import ReservationForm from "../organismes/ReservationForm";
 const ReservationPage = () => {
   return (
     <>
@@ -13,39 +11,7 @@ const ReservationPage = () => {
         value="Reservations"
       />
       <TableMap />
-      <TableChoice
-        key={1}
-        id={1}
-        seats={2}
-        isReserved={false}
-        onClick={() => console.log("Click")}
-      />
-      <TableChoice
-        key={1}
-        id={1}
-        seats={4}
-        isReserved={false}
-        onClick={() => console.log("Click")}
-      />
-      <TableChoice
-        key={1}
-        id={1}
-        seats={6}
-        isReserved={false}
-        onClick={() => console.log("Click")}
-      />
-      <TableChoice
-        key={1}
-        id={1}
-        seats={8}
-        isReserved={false}
-        onClick={() => console.log("Click")}
-      />
-      <ReservationForm
-        tableId={1}
-        initialStartTime={"12:00"}
-        initialEndTime={"15:00"}
-      ></ReservationForm>
+
     </>
   );
 };
