@@ -1,29 +1,22 @@
-import { useEffect, useState } from "react";
-import { MenuService, type MenuItem } from "../../services/MenuService";
+import Menu from "../organismes/Menu";
+import MenuBar from "../organismes/MenuBar";
+import TopNav from "../organismes/TopNav";
+import "./MenuPage.css";
+
 
 const MenuPage = () => {
-  const [menu, setMenu] = useState<MenuItem[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    MenuService.getMenu()
-      .then((data) => setMenu(data))
-      .finally(() => setLoading(false));
-  }, []);
-
-  if (loading) return <div>Lade Menü...</div>;
 
   return (
-    <div>
-      <h2>Menü</h2>
-      <ul>
-        {menu.map((item) => (
-          <li key={item.id}>
-            <strong>{item.name}</strong> – {item.description} ({item.price} €)
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <TopNav/>
+      <div className="layout">
+        <MenuBar />
+        <div className="menu">
+          <h2>Menu</h2>
+          <Menu />
+        </div>
+      </div>
+    </>
   );
 };
 

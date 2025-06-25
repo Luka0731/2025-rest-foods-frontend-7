@@ -52,9 +52,9 @@
 
 .Form {
   max-width: 900px;
-  margin: 2rem auto;
+  margin: 1rem auto;
   padding: 2rem;
-  background-color: #fff8e7;
+  background-color: #d2dbbf;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -87,7 +87,7 @@
   font-size: 1rem;
   font-family: inherit;
   transition: border-color 0.3s ease;
-  background-color: #003049;
+  background-color: #626f47;
 }
 
 .Form input:focus,
@@ -112,7 +112,7 @@
 .Submit {
   padding: 0.75rem;
   font-size: 1rem;
-  background-color: #78acc8;
+  background-color: #f0bb78;
   color: white;
   border: none;
   border-radius: 8px;
@@ -122,10 +122,10 @@
 }
 
 .Submit:hover:not(:disabled) {
-  background-color: #26404d;
+  background-color: #d49b50;
 }
 
 .Submit:disabled {
-  background-color: #003049;
+  background-color: #a56b1f;
   cursor: not-allowed;
 }

@@ -11,15 +11,6 @@ section {
   margin: 0 auto;
 }
 
-.top-nav {
-  background-color: #d62828;
-  color: white;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .start-card {
   position: relative;
   text-align: center;

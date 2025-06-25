@@ -4,19 +4,28 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+
 import "../../styling/TopNav.css";
+
 const TopNav: React.FC = () => {
   const navigate = useNavigate();
   const { isAuthenticated, logout } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const toggleMenu = () => setMenuOpen((prev) => !prev);
 
   return (
     <nav className="top-nav">
-      <RestaurantIcon className="top-nav__icon" />
+      <div className="top-nav__brand" onClick={() => navigate("/")}>
+        <RestaurantIcon className="top-nav__icon" />
+        <span className="top-nav__brand-text">REST-Foods</span>
+      </div>
 
-      <div className="top-nav__toggle" onClick={toggleMenu}>
+      <div
+        className="top-nav__toggle"
+        onClick={toggleMenu}
+        aria-label="Toggle menu"
+      >
         {menuOpen ? <CloseIcon /> : <MenuIcon />}
       </div>
 

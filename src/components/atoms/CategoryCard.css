@@ -1,0 +1,35 @@
+:root {
+    --color-1: #A4B465;
+    --color-2: #626F47;
+    --color-3: #F0BB78;
+    --color-4: #F5ECD5;
+    --color-5: #21221c;
+}
+
+.category-card {
+    position: relative;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 6px;
+    width: flex;
+    height: 90px;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--color-1);
+    border-radius: 8px;
+}
+
+.title {
+    color: var(--color-4);
+    font-size: 20px;
+    font-weight: bold;
+    margin: 2px 0 0 0;
+    text-align: center;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+}

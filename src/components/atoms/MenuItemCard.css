@@ -1,0 +1,115 @@
+/*-------  card -------*/
+
+:root {
+    --color-1: #A4B465;
+    --color-2: #626F47;
+    --color-3: #F0BB78;
+    --color-4: #F5ECD5;
+    --color-5: #21221c;
+    --color-6: rgb(235, 223, 190);
+}
+
+.menu-item-card {
+  width: 300px;
+  height: 380px;
+  background-color: var(--color-4);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  margin: 16px auto;
+  color: var(--color-5);
+  position: relative;
+  animation: slideInFromLeft 0.5s ease;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-item-card:hover {
+  background-color: var(--color-6);
+}
+
+.image-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.dish-image {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 16px;
+  border: 2px solid var(--color-1);
+}
+
+/*-------  chefs choice  -------*/
+
+.chefs-choice-icon {
+  position: absolute;
+  top: 26px;
+  right: 26px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  animation: rotateWiggle 1.5s ease infinite;
+}
+
+@keyframes rotateWiggle {
+  0% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(14deg);
+  }
+  100% {
+    transform: rotate(-6deg);
+  }
+}
+
+.chefs-choice-text {
+  font-size: 0.8rem;
+  color: var(--color-5);
+  font-weight: 700; 
+  line-height: 0.8rem;
+}
+
+
+/*-------  texts  -------*/
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+  letter-spacing: 1px;
+  color: var(--color-2);
+}
+
+p {
+  margin: 8px 0;
+  font-size: 0.9rem;
+  color: var(--color-5);
+}
+
+.price-text {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0px 0;
+  color: var(--color-3);
+}
+
+
+/*-------  buttons  -------*/
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+}

@@ -9,7 +9,7 @@ interface FieldPairProps {
 
 const FieldPair: React.FC<FieldPairProps> = ({ label, value }) => (
   <div className="line">
-    <label className="label">{label}</label>
+    <p className="label">{label}</p>
     <p className="value">{value}</p>
   </div>
 );
